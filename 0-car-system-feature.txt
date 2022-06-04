@@ -1,0 +1,41 @@
+car-system-features.txt
+
+Files
+1-car-system-out.py (server)
+2-car-system-in.py (client)
+3-car-system-location.py
+4-car-system-check.py
+
+###############################
+1-car-system-out.py (server)
+    - server.py
+    function
+        - บันทึกเวลาออก car-out
+        - คำนวณชั่วโมงจอด
+        - คำนวณค่าจอด
+        - บันทึกข้อมูลที่ได้รับจาก [2]
+###############################
+2-car-system-in.py (client)
+    - client-1.py (connect server-out)
+    function
+        - บันทึกข้อมูลรถ ยี่ห้อสี ป้ายทะเบียน บัตร
+        - บันทึกเวลาเข้า
+        - ส่งไปหา [1]
+        - บันทึกลงใน csv เครื่องตัวเอง
+###############################
+3-car-system-location.py
+    - client-1.py (connect server-out)
+        function
+        - ดึงข้อมูลรถ ยี่ห้อสี ป้ายทะเบียน บัตรจาก [1]
+    - server.py
+        function
+        - บันทึกตำแหน่งโซนที่จอดของรถได้
+        - ส่งข้อมูลรถไปยัง [4]
+###############################
+4-car-system-check.py
+    - client-3.py (connect server-location)
+    function
+        - ดึงข้อมูลรถ ยี่ห้อสี ป้ายทะเบียน บัตรจาก [3]
+        - ดึงข้อมูลตำแหน่งโซนของรถจาก [3]
+###############################
+
