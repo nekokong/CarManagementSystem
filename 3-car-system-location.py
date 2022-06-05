@@ -9,7 +9,7 @@ plate_dict = {}
 # plate_dict = {'1AB7128':['4564131','646513','4643133']}
 
 import threading
-serverip_location = '192.168.1.108'
+serverip_location = '192.168.1.108' # IP of 3-car-system-location.py
 port_location = 8500
 buffsize_location = 4096
 
@@ -34,7 +34,7 @@ def LocationServer():
         if source == 'check':
             # text = '1AB7128'
             check = plate_dict[plate] # ['f583f7b5', 'in', 'toyota', 'red', '1AB7128', '1001', '2022-05-07 15:29:15']
-            text = 'loction|'
+            text = 'location|'
             for c in check:
                 text += c + '|'
                 
@@ -72,7 +72,7 @@ def splitrow(datalist, columns=7):
 
 #############ADDRESS##############
 #serverip = '159.65.135.242' # (test server uncleengineer)
-serverip = '192.168.1.108'
+serverip = '192.168.1.108' # IP of 1-car-system-out.py
 port = 8000
 buffsize = 4096 # Total character can receive per time
 
